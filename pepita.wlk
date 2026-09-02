@@ -31,13 +31,17 @@ object pepita{
 	
 	method volar(metros){
 		self.validarVolar(metros)
-		energia = energia - 10 - metros / 10
+		energia = self.energiaAlVolar(metros)
 	}
 
 	method validarVolar(metros){
-		if((energia - 10 - metros/10) < 0){
-			self.error"no puede volar porque no tiene suficiente energia"
+		if(self.energiaAlVolar(metros) < 0){
+			self.error("no puede volar porque no tiene suficiente energia")
 		}
+	}
+
+	method energiaAlVolar(metros){
+		return (energia - 10 - metros / 10)
 	}
 
 	method descansar(){
