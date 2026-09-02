@@ -49,6 +49,7 @@ object pepita{
 	}
 
 	method comer(alimento){
+		self.validarComer(alimento)
 		energia = energia + alimento.energiaQueAporta()
 	}
 }
