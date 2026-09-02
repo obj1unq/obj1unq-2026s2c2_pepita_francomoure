@@ -30,7 +30,14 @@ object pepita{
 	var energia = 100
 	
 	method volar(metros){
+		self.validarVolar(metros)
 		energia = energia - 10 - metros / 10
+	}
+
+	method validarVolar(metros){
+		if((energia - 10 - metros/10) < 0){
+			self.error"no puede volar porque no tiene suficiente energia"
+		}
 	}
 
 	method descansar(){
