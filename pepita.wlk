@@ -56,6 +56,12 @@ object pepita{
 		self.validarComer(alimento)
 		energia = energia + alimento.energiaQueAporta()
 	}
+
+	method validarComer(){
+		if(energia + alimento.energiaQueAporta() > 100){
+			self.error("no puede comer algo que haga que su energia sea mayor a 100")
+		}
+	}
 }
 
 object pepon{
